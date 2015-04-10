@@ -1,0 +1,38 @@
+<resources>
+    <!-- credentials -->
+    <string name="INTUIT_SENDER_ID"> [Your Intuit Sender ID] </string>
+    <string name="GCM_PROJECT_NUMBER"> [Your GCM Project Number] </string>
+
+    <!-- app -->
+    <string name="app_name">Lumen</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Preferences -->
+    <string-array name="condition_names">
+        <item>absence of light</item>
+        <item>natural lighting</item>
+        <item>artificial lighting</item>
+        <item>small fluctuation</item>
+        <item>medium fluctuation</item>
+        <item>large fluctuation</item>
+    </string-array>
+    <string-array name="condition_values">
+        <item>dark</item>
+        <item>natural</item>
+        <item>artificial</item>
+        <item>d1</item>
+        <item>d2</item>
+        <item>d3</item>
+    </string-array>
+    <string-array name="condition_defaults">
+        <item>dark</item>
+        <item>artificial</item>
+    </string-array>
+
+    <!-- Preference Keys -->
+    <string name="preference_key_userid">userid</string>
+    <string name="preference_key_sources">sources</string>
+    <string name="preference_key_sync">sync</string>
+    <string name="preference_key_demo">demo</string>
+
+</resources>

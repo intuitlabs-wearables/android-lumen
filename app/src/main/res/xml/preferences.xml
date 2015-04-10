@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fragment="com.intuitlabs.android.lumen.SettingsFragment"
+    android:title="Lumen Preferences">
+    <PreferenceCategory
+        android:summary="Select from lighting conditions"
+        android:title="Notifications">
+        <MultiSelectListPreference
+            android:defaultValue="@array/condition_defaults"
+            android:dialogTitle="Events"
+            android:entries="@array/condition_names"
+            android:entryValues="@array/condition_values"
+            android:key="@string/preference_key_sources"
+            android:summary=""
+            android:title="Select from lighting conditions" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary=""
+        android:title="Synchronize Settings">
+        <Preference
+            android:key="@string/preference_key_sync"
+            android:summary="Resend condition selection"
+            android:title="Sync" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:summary=""
+        android:title="Simulate Push">
+        <Preference
+            android:key="@string/preference_key_demo"
+            android:summary="Create a Notification"
+            android:title="Demo" />
+    </PreferenceCategory>
+</PreferenceScreen>

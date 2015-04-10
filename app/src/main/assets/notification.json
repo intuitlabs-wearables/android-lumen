@@ -1,0 +1,12 @@
+{
+  "style": "BigTextStyle",
+  "BigTextStyle": {
+    "bigContentTitle": "Lumen",
+    "bigText": "Artificial Lighting",
+    "summary": "Lighting conditions changed from 123 to 456"
+  },
+  "contentTitle": "My Content Title",
+  "contentText": "My Content Text",
+  "smallIcon": "ic_lightbulb",
+  "background": "ic_lightbulb_y"
+}
