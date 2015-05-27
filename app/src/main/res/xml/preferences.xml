@@ -3,14 +3,28 @@
     android:fragment="com.intuitlabs.android.lumen.SettingsFragment"
     android:title="Lumen Preferences">
     <PreferenceCategory
+        android:icon="@drawable/ic_img_pi"
         android:summary="Select from lighting conditions"
-        android:title="Notifications">
+        android:title="Notifications From RaspPi">
         <MultiSelectListPreference
-            android:defaultValue="@array/condition_defaults"
+            android:defaultValue="@array/condition_defaults_pi"
             android:dialogTitle="Events"
             android:entries="@array/condition_names"
-            android:entryValues="@array/condition_values"
-            android:key="@string/preference_key_sources"
+            android:entryValues="@array/condition_values_pi"
+            android:key="@string/preference_key_sources_pi"
+            android:summary=""
+            android:title="Select from lighting conditions" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:icon="@drawable/ic_img_ard"
+        android:summary="Select from lighting conditions"
+        android:title="Notifications from ESP8266">
+        <MultiSelectListPreference
+            android:defaultValue="@array/condition_defaults_esp"
+            android:dialogTitle="Events"
+            android:entries="@array/condition_names"
+            android:entryValues="@array/condition_values_esp"
+            android:key="@string/preference_key_sources_esp"
             android:summary=""
             android:title="Select from lighting conditions" />
     </PreferenceCategory>

@@ -19,7 +19,7 @@
         <item>medium fluctuation</item>
         <item>large fluctuation</item>
     </string-array>
-    <string-array name="condition_values">
+    <string-array name="condition_values_pi">
         <item>dark</item>
         <item>natural</item>
         <item>artificial</item>
@@ -27,14 +27,31 @@
         <item>d2</item>
         <item>d3</item>
     </string-array>
-    <string-array name="condition_defaults">
+
+    <string-array name="condition_values_esp">
+        <item>a_dark</item>
+        <item>a_natural</item>
+        <item>a_artificial</item>
+        <item>a_d1</item>
+        <item>a_d2</item>
+        <item>a_d3</item>
+    </string-array>
+
+    <string-array name="condition_defaults_pi">
         <item>dark</item>
         <item>artificial</item>
     </string-array>
 
+    <string-array name="condition_defaults_esp">
+        <item>a_dark</item>
+        <item>a_artificial</item>
+    </string-array>
+
     <!-- Preference Keys -->
     <string name="preference_key_userid">userid</string>
-    <string name="preference_key_sources">sources</string>
+    <string name="preference_key_sources_pi">sources_pi</string>
+    <string name="preference_key_sources_esp">sources_esp</string>
+
     <string name="preference_key_sync">sync</string>
     <string name="preference_key_demo">demo</string>
 

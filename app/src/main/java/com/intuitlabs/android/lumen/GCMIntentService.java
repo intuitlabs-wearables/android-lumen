@@ -62,6 +62,8 @@ public class GCMIntentService extends GCMBaseIntentService {
     private static String userid;
     private static String[] groups;
 
+
+
     public GCMIntentService() {
         super(GCM_PROJECT_NUMBER);
     }
@@ -74,8 +76,8 @@ public class GCMIntentService extends GCMBaseIntentService {
      */
     public static void register(final Context context, final String userid) {
         GCMIntentService.userid = userid;
-        GCMIntentService.groups = context.getResources().getStringArray(R.array.condition_defaults);
-
+        GCMIntentService.groups = App.concat(context.getResources().getStringArray(R.array.condition_defaults_pi),
+                context.getResources().getStringArray(R.array.condition_defaults_esp));
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(context.getString(R.string.preference_key_userid), userid);

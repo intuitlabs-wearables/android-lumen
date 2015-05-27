@@ -67,11 +67,25 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
      */
     public static void syncGroups(final Context context) {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        final Set<String> defaultFeeds = new HashSet<>(Arrays.asList(context.getResources().getStringArray(R.array.condition_defaults)));
-        final Set<String> ss = prefs.getStringSet(context.getString(R.string.preference_key_sources), defaultFeeds);
         final String userId = prefs.getString(context.getString(R.string.preference_key_userid), "");
 
-        final String[] s0 = context.getResources().getStringArray(R.array.condition_values);
+//        final String[] sources=  App.concat(
+//                context.getResources().getStringArray(R.array.preference_key_sources_pi),
+//                context.getResources().getStringArray(R.array.preference_key_sources_esp));
+
+        final Set<String> defaultFeeds_pi = new HashSet<>(Arrays.asList(context.getResources().getStringArray(R.array.condition_defaults_pi)));
+        final Set<String> defaultFeeds_esp = new HashSet<>(Arrays.asList(context.getResources().getStringArray(R.array.condition_defaults_esp)));
+
+        // selected (or default) groups for the pi
+        final Set<String> ss = prefs.getStringSet(context.getString(R.string.preference_key_sources_pi), defaultFeeds_pi);
+        // now add selected (or default) groups for the esp
+        assert ss != null;
+        ss.addAll(prefs.getStringSet(context.getString(R.string.preference_key_sources_esp), defaultFeeds_esp));
+
+        // all possible group values
+        final String[] s0 = App.concat(
+                context.getResources().getStringArray(R.array.condition_values_pi),
+                context.getResources().getStringArray(R.array.condition_values_esp));
 
         for (final String s : s0) { // all group values
             boolean subscribe = false;
@@ -243,7 +257,8 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
      */
     @Override
     public void onSharedPreferenceChanged(final SharedPreferences sharedPreferences, final String key) {
-        if (key.equals(getString(R.string.preference_key_sources))) {
+        if (key.equals(getString(R.string.preference_key_sources_pi)) ||
+                key.equals(getString(R.string.preference_key_sources_esp))) {
             Log.d(LOG_TAG, "Preferences changed");
             syncGroups(this.getActivity().getApplicationContext());
         } else if (key.equals(getString(R.string.preference_key_sync))) {

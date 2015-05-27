@@ -44,4 +44,20 @@ public class App extends Application {
         super.onCreate();
         mContext = this.getApplicationContext();
     }
+
+    /**
+     * Concatenate two String Arrays
+     *
+     * @param A {@link String[]}
+     * @param B {@link String[]}
+     * @return {@link String[]}
+     */
+    public static String[] concat(final String[] A, final String[] B) {
+        int aLen = A.length;
+        int bLen = B.length;
+        final String[] C = new String[aLen + bLen];
+        System.arraycopy(A, 0, C, 0, aLen);
+        System.arraycopy(B, 0, C, aLen, bLen);
+        return C;
+    }
 }
